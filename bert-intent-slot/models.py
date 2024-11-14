@@ -21,7 +21,7 @@ class BertMultiHeadJointClassification(BertPreTrainedModel):
         self.token_label_nums = token_label_nums
 
         self.seq_head_num = len(seq_label_nums)
-        self.token_head_num = 4 # no need that much
+        self.token_head_num = len(token_label_nums)
 
         self.bert = BertModel(config, add_pooling_layer=True)
         classifier_dropout = (
