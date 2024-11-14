@@ -9,8 +9,8 @@ import time
 
 start1_time = time.perf_counter()
 model = JointIntentSlotDetector.from_pretrained(
-    model_path='./save_model/bert-base-chinese',
-    tokenizer_path='./save_model/bert-base-chinese',
+    model_path='uer/roberta-mini-word-chinese-cluecorpussmall',
+    tokenizer_path='uer/roberta-mini-word-chinese-cluecorpussmall',
     intent_label_path='./data/SMP2019/intent_labels.txt',
     slot_label_path='./data/SMP2019/slot_labels.txt'
 )
