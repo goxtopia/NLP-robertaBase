@@ -151,8 +151,8 @@ class JointIntentSlotDetector:
 if __name__ == '__main__':
     # model_path = '../saved_models/jointbert-SMP2019/model/model_epoch2'
     # tokenizer_path = '../saved_models/jointbert-SMP2019/tokenizer/'
-    model_path = 'uer/roberta-mini-word-chinese-cluecorpussmall'
-    tokenizer_path = 'uer/roberta-mini-word-chinese-cluecorpussmall'
+    model_path = '../saved_models/roberta-mini-word-chinese-cluecorpussmall'
+    tokenizer_path = '../saved_models/roberta-mini-word-chinese-cluecorpussmall'
     intent_path = 'data/SMP2019/intent_labels.txt'
     slot_path = 'data/SMP2019/slot_labels.txt'
     model = JointIntentSlotDetector.from_pretrained(
