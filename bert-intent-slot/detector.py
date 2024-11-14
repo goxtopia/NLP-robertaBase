@@ -52,6 +52,7 @@ class JointIntentSlotDetector:
                 results[slot_name] = [slot_value]
             return results
 
+        print(slot_labels)
         for i, slot_label in enumerate(slot_labels):
             if mask[i] == 0:
                 continue
