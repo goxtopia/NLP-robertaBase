@@ -194,7 +194,7 @@ if __name__ == '__main__':
 
     # data parameters
     parser.add_argument("--train_data_path", type=str, default='data/SMP2019/data.json', help="training data path")
-    parser.add_argument("--train_val_data_split", type=float, default=0.8, help="training data and val data split rate")
+    parser.add_argument("--train_val_data_split", type=float, default=0.85, help="training data and val data split rate")
     parser.add_argument("--slot_label_path", type=str, default='data/SMP2019/slot_labels.txt', help="slot label path")
     parser.add_argument("--intent_label_path", type=str, default='data/SMP2019/intent_labels.txt', help="intent label path")
 
@@ -204,12 +204,12 @@ if __name__ == '__main__':
     parser.add_argument("--gradient_accumulation_steps", type=int, default=1, help="number of updates steps to accumulate before performing a backward() pass.(执行 backward() 之前累积的更新步数数量)")
 
     parser.add_argument("--batch_size", type=int, default=64, help='training data batch size')
-    parser.add_argument("--train_epochs", type=int, default=35, help='training epoch number')
+    parser.add_argument("--train_epochs", type=int, default=50, help='training epoch number')
 
     parser.add_argument("--learning_rate", type=float, default=5e-5, help='learning rate')
     parser.add_argument("--adam_epsilon", type=float, default=1e-8, help="epsilon for Adam optimizer")
     parser.add_argument("--warmup_steps", type=int, default=0, help="warmup step number")
-    parser.add_argument("--weight_decay", type=float, default=2e-4, help="weight decay rate")
+    parser.add_argument("--weight_decay", type=float, default=2e-3, help="weight decay rate")
     parser.add_argument("--max_grad_norm", type=float, default=1.0, help="maximum norm for gradients")
 
     args = parser.parse_args()
