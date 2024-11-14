@@ -9,6 +9,7 @@ import torch.nn as nn
 
 from transformers import BertPreTrainedModel, BertModel, AlbertTokenizer
 
+
 class BertMultiHeadJointClassification(BertPreTrainedModel):
     def __init__(self, config, seq_label_nums, token_label_nums):
         """
@@ -20,7 +21,7 @@ class BertMultiHeadJointClassification(BertPreTrainedModel):
         self.token_label_nums = token_label_nums
 
         self.seq_head_num = len(seq_label_nums)
-        self.token_head_num = len(token_label_nums)
+        self.token_head_num = 4 # no need that much
 
         self.bert = BertModel(config, add_pooling_layer=True)
         classifier_dropout = (
@@ -32,9 +33,15 @@ class BertMultiHeadJointClassification(BertPreTrainedModel):
             [nn.Linear(config.hidden_size, seq_label_nums[i]) for i in range(self.seq_head_num)]
         )
 
-        self.token_heads = nn.ModuleList(
-            [nn.Linear(config.hidden_size, token_label_nums[i]) for i in range(self.token_head_num)]
-        )
+        self.token_heads = nn.ModuleList([
+            nn.Sequential(
+                nn.Linear(config.hidden_size, config.hidden_size * 2),
+                nn.GELU(),
+                nn.Dropout(0.1),
+                nn.Linear(config.hidden_size * 2, token_label_nums[i])
+            )
+            for i in range(self.token_head_num)
+        ])
 
     def forward(
         self,
