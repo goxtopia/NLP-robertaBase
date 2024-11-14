@@ -8,7 +8,7 @@ import json
 from tqdm import tqdm
 
 from torch.utils.data import Dataset
-from transformers import BertTokenizer
+from transformers import AlbertTokenizer
 
 from labeldict import LabelDict
 
@@ -109,7 +109,7 @@ if __name__ == '__main__':
     data_path = '/home/pengyu/workspace/intent-detect-core/data/intent_train_data.json'
     intent_label_path = 'data/intent_labels.txt'
     slot_label_path = 'data/slot_labels.txt'
-    tokenizer = BertTokenizer.from_pretrained('bert-base-chinese')
+    tokenizer = AlbertTokenizer.from_pretrained('uer/roberta-mini-word-chinese-cluecorpussmall')
     dataset = IntentSlotDataset.load_from_path(
         data_path=data_path,
         intent_label_path=intent_label_path,
