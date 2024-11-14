@@ -206,7 +206,7 @@ if __name__ == '__main__':
     parser.add_argument("--batch_size", type=int, default=32, help='training data batch size')
     parser.add_argument("--train_epochs", type=int, default=50, help='training epoch number')
 
-    parser.add_argument("--learning_rate", type=float, default=1e-4, help='learning rate')
+    parser.add_argument("--learning_rate", type=float, default=0.75e-4, help='learning rate')
     parser.add_argument("--adam_epsilon", type=float, default=1e-8, help="epsilon for Adam optimizer")
     parser.add_argument("--warmup_steps", type=int, default=0, help="warmup step number")
     parser.add_argument("--weight_decay", type=float, default=5e-3, help="weight decay rate")
