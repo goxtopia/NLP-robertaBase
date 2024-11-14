@@ -33,6 +33,7 @@ class BertMultiHeadJointClassification(BertPreTrainedModel):
             [nn.Linear(config.hidden_size, seq_label_nums[i]) for i in range(self.seq_head_num)]
         )
 
+        print(token_label_nums)
         self.token_heads = nn.ModuleList([
             nn.Sequential(
                 nn.Linear(config.hidden_size, config.hidden_size * 2),
