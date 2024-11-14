@@ -12,6 +12,7 @@ from transformers import AlbertTokenizer
 from models import JointBert
 from labeldict import LabelDict
 
+simple_head = True
 
 class JointIntentSlotDetector:
     def __init__(self, model, tokenizer, intent_dict, slot_dict, use_cuda=True):
@@ -100,7 +101,10 @@ class JointIntentSlotDetector:
         """
         slot_probs : probability of a batch of tokens into slot labels, [batch, seq_len, slot_label_num], numpy array
         """
-        slot_ids = np.argmax(slot_probs, axis=-1)
+        if simple_head:
+            slot_ids = [np.argmax(item) for item in slot_probs]
+        else :
+            slot_ids = np.argmax(slot_probs, axis=-1)
         return self.slot_dict[slot_ids.tolist()]
 
     def _predict_intent_labels(self, intent_probs):
