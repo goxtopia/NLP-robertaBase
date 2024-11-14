@@ -52,7 +52,7 @@ class JointIntentSlotDetector:
                 results[slot_name] = [slot_value]
             return results
 
-        print(slot_labels)
+        # print(slot_labels)
         for i, slot_label in enumerate(slot_labels):
             if mask[i] == 0:
                 continue
@@ -68,7 +68,8 @@ class JointIntentSlotDetector:
                 if slot_name in unfinished_slots and len(unfinished_slots[slot_name]) > 0:
                     unfinished_slots[slot_name] += self.tokenizer.decode(input_ids[i])
                 else:
-                    print(self.tokenizer.decode(input_ids[i]))
+                    # print(self.tokenizer.decode(input_ids[i]))
+                    pass
 
         for slot_name, slot_value in unfinished_slots.items():
             if len(slot_value) > 0:
