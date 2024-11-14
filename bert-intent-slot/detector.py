@@ -12,7 +12,7 @@ from transformers import AlbertTokenizer
 from models import JointBert
 from labeldict import LabelDict
 
-simple_head = True
+simple_head = False
 
 class JointIntentSlotDetector:
     def __init__(self, model, tokenizer, intent_dict, slot_dict, use_cuda=True):
