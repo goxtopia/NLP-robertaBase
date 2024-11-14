@@ -12,7 +12,7 @@ from seqeval.metrics import accuracy_score
 import torch
 from torch.utils.data import DataLoader
 
-from transformers import BertTokenizer
+from transformers import AlbertTokenizer
 from transformers import get_linear_schedule_with_warmup
 
 from datasets import IntentSlotDataset
@@ -68,7 +68,7 @@ def train(args):
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
     # -----------load tokenizer-----------
-    tokenizer = BertTokenizer.from_pretrained(args.model_path)
+    tokenizer = AlbertTokenizer.from_pretrained(args.model_path)
     save_module(tokenizer, model_save_dir)
 
     # -----------load data-----------------
