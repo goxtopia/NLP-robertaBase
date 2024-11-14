@@ -22,7 +22,7 @@ class BertMultiHeadJointClassification(BertPreTrainedModel):
         self.seq_head_num = len(seq_label_nums)
         self.token_head_num = len(token_label_nums)
 
-        self.bert = BertModel.from_pretrained(config, add_pooling_layer=True)
+        self.bert = BertModel(config, add_pooling_layer=True)
         classifier_dropout = (
             config.classifier_dropout if config.classifier_dropout is not None else config.hidden_dropout_prob
         )
