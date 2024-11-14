@@ -203,13 +203,13 @@ if __name__ == '__main__':
     parser.add_argument("--max_training_steps", type=int, default=0, help='max training step for optimizer(优化器的最大训练步数), if larger than 0')
     parser.add_argument("--gradient_accumulation_steps", type=int, default=1, help="number of updates steps to accumulate before performing a backward() pass.(执行 backward() 之前累积的更新步数数量)")
 
-    parser.add_argument("--batch_size", type=int, default=32, help='training data batch size')
-    parser.add_argument("--train_epochs", type=int, default=25, help='training epoch number')
+    parser.add_argument("--batch_size", type=int, default=64, help='training data batch size')
+    parser.add_argument("--train_epochs", type=int, default=35, help='training epoch number')
 
     parser.add_argument("--learning_rate", type=float, default=5e-5, help='learning rate')
     parser.add_argument("--adam_epsilon", type=float, default=1e-8, help="epsilon for Adam optimizer")
     parser.add_argument("--warmup_steps", type=int, default=0, help="warmup step number")
-    parser.add_argument("--weight_decay", type=float, default=2.5e-3, help="weight decay rate")
+    parser.add_argument("--weight_decay", type=float, default=2e-4, help="weight decay rate")
     parser.add_argument("--max_grad_norm", type=float, default=1.0, help="maximum norm for gradients")
 
     args = parser.parse_args()
