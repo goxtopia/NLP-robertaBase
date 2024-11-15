@@ -9,8 +9,8 @@ import time
 
 start1_time = time.perf_counter()
 model = JointIntentSlotDetector.from_pretrained(
-    model_path='/kaggle/working/NLP-robertaBase/bert-intent-slot/save_model/roberta-base-word-chinese-cluecorpussmall',
-    tokenizer_path='/kaggle/working/NLP-robertaBase/bert-intent-slot/save_model/roberta-base-word-chinese-cluecorpussmall',
+    model_path='/kaggle/working/NLP-robertaBase/bert-intent-slot/save_model/roberta-medium-wwm-chinese-cluecorpussmall',
+    tokenizer_path='/kaggle/working/NLP-robertaBase/bert-intent-slot/save_model/roberta-medium-wwm-chinese-cluecorpussmall',
     intent_label_path='./data/SMP2019/intent_labels.txt',
     slot_label_path='./data/SMP2019/slot_labels.txt'
 )
