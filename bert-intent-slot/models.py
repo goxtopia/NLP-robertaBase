@@ -7,7 +7,7 @@
 import torch
 import torch.nn as nn
 
-from transformers import BertPreTrainedModel, BertModel, AlbertTokenizer
+from transformers import BertPreTrainedModel, BertModel, BertTokenizer
 
 
 class BertMultiHeadJointClassification(BertPreTrainedModel):
