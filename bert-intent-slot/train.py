@@ -68,7 +68,7 @@ def train(args):
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
     # -----------load tokenizer-----------
-    tokenizer = AlbertTokenizer.from_pretrained(args.model_path)
+    tokenizer = BertTokenizer.from_pretrained(args.model_path)
     save_module(tokenizer, model_save_dir)
 
     # -----------load data-----------------
