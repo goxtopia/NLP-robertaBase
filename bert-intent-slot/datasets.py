@@ -33,6 +33,7 @@ def get_slot_labels(text, slots, tokenizer):
 
             for text_pattern in slot_values:
                 pattern_tokens = tokenizer.tokenize(text_pattern)
+                print(text_pattern, slot_label, slot_values)
                 # if "".join(text_tokens[i: i + len(pattern_tokens)]) == "".join(pattern_tokens): aware that now we using word model
                 slot_matched = True
                 slot_labels.extend(['B_' + slot_label] + ['I_' + slot_label] * (len(pattern_tokens) - 1))
