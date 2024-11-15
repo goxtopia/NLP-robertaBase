@@ -109,7 +109,9 @@ if __name__ == '__main__':
     data_path = '/home/pengyu/workspace/intent-detect-core/data/intent_train_data.json'
     intent_label_path = 'data/intent_labels.txt'
     slot_label_path = 'data/slot_labels.txt'
-    tokenizer = AlbertTokenizer.from_pretrained('uer/roberta-mini-word-chinese-cluecorpussmall')
+    # tokenizer = AlbertTokenizer.from_pretrained('uer/roberta-mini-word-chinese-cluecorpussmall')
+    # uer/roberta-base-word-chinese-cluecorpussmall
+    tokenizer = AlbertTokenizer.from_pretrained('uer/roberta-base-word-chinese-cluecorpussmall')
     dataset = IntentSlotDataset.load_from_path(
         data_path=data_path,
         intent_label_path=intent_label_path,
