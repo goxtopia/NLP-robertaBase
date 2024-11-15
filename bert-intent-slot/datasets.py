@@ -114,7 +114,7 @@ if __name__ == '__main__':
     slot_label_path = 'data/slot_labels.txt'
     # tokenizer = AlbertTokenizer.from_pretrained('uer/roberta-mini-word-chinese-cluecorpussmall')
     # uer/roberta-base-word-chinese-cluecorpussmall
-    tokenizer = AlbertTokenizer.from_pretrained('uer/roberta-base-word-chinese-cluecorpussmall')
+    tokenizer = AlbertTokenizer.from_pretrained('uer/roberta-medium-wwm-chinese-cluecorpussmall')
     dataset = IntentSlotDataset.load_from_path(
         data_path=data_path,
         intent_label_path=intent_label_path,
