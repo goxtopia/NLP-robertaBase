@@ -204,7 +204,7 @@ if __name__ == '__main__':
     parser.add_argument("--gradient_accumulation_steps", type=int, default=1, help="number of updates steps to accumulate before performing a backward() pass.(执行 backward() 之前累积的更新步数数量)")
 
     parser.add_argument("--batch_size", type=int, default=32, help='training data batch size')
-    parser.add_argument("--train_epochs", type=int, default=20, help='training epoch number')
+    parser.add_argument("--train_epochs", type=int, default=10, help='training epoch number')
 
     parser.add_argument("--learning_rate", type=float, default=5e-5, help='learning rate')
     parser.add_argument("--adam_epsilon", type=float, default=1e-8, help="epsilon for Adam optimizer")
