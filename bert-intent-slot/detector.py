@@ -7,7 +7,7 @@
 import torch
 import numpy as np
 
-from transformers import AlbertTokenizer
+from transformers import BertTokenizer
 
 from models import JointBert
 from labeldict import LabelDict
@@ -29,7 +29,7 @@ class JointIntentSlotDetector:
         intent_dict = LabelDict.load_dict(intent_label_path)
         slot_dict = LabelDict.load_dict(slot_label_path)
 
-        tokenizer = AlbertTokenizer.from_pretrained(tokenizer_path)
+        tokenizer = BertTokenizer.from_pretrained(tokenizer_path)
 
         model = JointBert.from_pretrained(
             model_path,
