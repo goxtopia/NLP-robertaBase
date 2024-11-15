@@ -59,6 +59,8 @@ class IntentSlotDataset(Dataset):
         for item in tqdm(raw_data):
             # 实体标注 '请帮我打开uc' --》 ['[O]', '[O]', '[O]', '[O]', '[O]', 'B_name']
             slot_labels = get_slot_labels(item['text'], item['slots'], tokenizer)
+            if item['intent'] == 'epg':
+                print(slot_labels)
             # ['[O]', '[O]', '[O]', '[O]', '[O]', 'B_name'] --》 转换为标签
             slot_ids = self.slot_label_dict.encode(['[PAD]'] + slot_labels + ['[PAD]'])
             intent_id = self.intent_label_dict[item['intent']]  # 意图标签
