@@ -12,7 +12,7 @@ from seqeval.metrics import accuracy_score
 import torch
 from torch.utils.data import DataLoader
 
-from transformers import AlbertTokenizer
+from transformers import BertTokenizer
 from transformers import get_linear_schedule_with_warmup
 
 from datasets import IntentSlotDataset
