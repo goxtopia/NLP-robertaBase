@@ -190,7 +190,7 @@ if __name__ == '__main__':
     parser.add_argument("--cuda_devices", type=str, default='0', help='set cuda device numbers')
 
     # model parameters
-    parser.add_argument("--model_path", type=str, default='uer/roberta-base-word-chinese-cluecorpussmall', help="pretrained model loading path")
+    parser.add_argument("--model_path", type=str, default='uer/roberta-medium-wwm-chinese-cluecorpussmall', help="pretrained model loading path")
 
     # data parameters
     parser.add_argument("--train_data_path", type=str, default='data/SMP2019/data.json', help="training data path")
